@@ -1,14 +1,32 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Windows 1.0 Emulator</title>
-  <meta charset="utf-8">
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #ibm5160-ega-win100 {
+      width: 640px;
+      height: 480px;
+    }
+  </style>
 </head>
-<body style="background: #000; margin: 0;">
+<body>
   <div id="ibm5160-ega-win100"></div>
 
   <script src="pcx86.js"></script>
   <script>
-    embedPCx86("ibm5160-ega-win100");
+    window.addEventListener("load", function() {
+      console.log("pcx86.js loaded, starting emulator.");
+      embedPCx86("ibm5160-ega-win100");
+    });
   </script>
 </body>
 </html>
